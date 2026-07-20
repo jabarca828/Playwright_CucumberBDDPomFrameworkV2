@@ -1,28 +1,22 @@
 import { Given, When, Then } from "@cucumber/cucumber";
-import { pageFixture } from "./hooks/browserContextFixture";
 import logger from '../logger/logger';
 import { CucumberWorld } from "./world/CucumberWorld";
-
-const url = "https://webdriveruniversity.com/"
+import { appConfig } from "../config/env";
 
 Given('I navigate to WebdriverUniversity homepage', async function (this: CucumberWorld) {
     try {
-        //Access URL
-        await this.homePage.navigate(url);
-        logger.info('Accessing URL: ' + url);
-        this.setUrl(url);
+        await this.homePage.navigate(appConfig.webdriverUniversityUrl);
+        logger.info('Accessing URL: ' + appConfig.webdriverUniversityUrl);
+        this.setUrl(appConfig.webdriverUniversityUrl);
     } catch (error: any) {
         logger.error('An error has occurred: ' + error.message);
     }
 });
 
 When('I click on the Contact Us button', async function (this: CucumberWorld) {
-    this.homePage.clickOnContactUsButton();
+    await this.homePage.clickOnContactUsButton();
 });
 
 When('I click on the Login Portal button', async function (this: CucumberWorld) {
-    this.homePage.clickOnLoginPortalButton();
+    await this.homePage.clickOnLoginPortalButton();
 });
-
-
-
