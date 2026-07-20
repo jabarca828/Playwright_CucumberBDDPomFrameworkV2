@@ -244,7 +244,6 @@ This is handled entirely by the `After` hook in `hooks.ts` — no manual screens
 ## 8. A Couple of Things Worth Knowing
 
 - **`playwright.config.ts` isn't used by this suite.** It's the default file created when Playwright is scaffolded (`npm init playwright`), but this project's actual test execution goes through Cucumber (`index.ts` / `npm run cucumber`), not `npx playwright test`. It's harmless to leave, but worth knowing so you don't wonder why editing it doesn't change your Cucumber runs.
-- **`tests-examples/demo-todo-app.spec.ts`** is also leftover scaffold content (Playwright's sample test) and isn't part of the real suite.
 - **Data in the demo scenarios is intentionally fixed in places** — e.g. the base "type a first name" step always fills `"Joe"`. This is fine for a demo/portfolio project, but worth knowing if you're wondering why the "default" scenario always uses identical data — the `@random` and `@examples` tagged scenarios exist specifically to exercise varied data.
 
 ---
