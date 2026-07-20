@@ -5,6 +5,11 @@ node_modules/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+/reports/report.html/
+//reports/report.json/
 
 # Environment variables
 env/.env
+
+# Test Reports
+reports/
