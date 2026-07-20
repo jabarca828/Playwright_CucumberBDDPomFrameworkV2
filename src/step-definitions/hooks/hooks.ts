@@ -2,7 +2,7 @@ import { AfterAll, BeforeAll, Before, After, Status } from "@cucumber/cucumber";
 import { chromium, firefox, webkit, Browser, BrowserType } from "@playwright/test"
 import { pageFixture } from "./browserContextFixture";
 import { PageManager } from "../../page-objects/base/PageManager";
-import { setGlobalSettings } from "../../utils/playwright-tiimeouts";
+import { setGlobalSettings } from "../../utils/playwright-timeouts";
 import { appConfig } from "../../config/env";
 
 //Create dictionary mapping browser names to their launch functions

@@ -21,6 +21,9 @@ export class CucumberWorld extends World {
     private lastName?: string;
     private emailAddress?: string;
 
+    //Login alert text
+    private alertText?: string;
+
     //{ attach, log, parameters, link }: IWorldOptions are required in the constructor of your CucumberWorld class to 
     //inherit functionalities from the base World class and to initialize your PageManager and BasePage.
     constructor({ attach, log, parameters, link }: IWorldOptions) {
@@ -49,6 +52,10 @@ export class CucumberWorld extends World {
         this.emailAddress = emailAddress;
     }
 
+    setAlertText(alertText: string) {
+        this.alertText = alertText;
+    }
+
     //Getter methods for URL, first name etc:
     getURL() {
         return this.url;
@@ -64,6 +71,10 @@ export class CucumberWorld extends World {
 
     getEmailAddress() {
         return this.emailAddress;
+    }
+
+    getAlertText() {
+        return this.alertText;
     }
 }
 

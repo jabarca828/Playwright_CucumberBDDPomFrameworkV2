@@ -1,7 +1,5 @@
 import { BasePage } from "../page-objects/base/BasePage"
 
-let alertText: string;
-
 export class LoginPage extends BasePage {
 
     //Click Login Button
@@ -20,3 +18,4 @@ export class LoginPage extends BasePage {
         await this.page.getByRole('textbox', { name: 'Password' }).fill(password);
     }
 }
+
